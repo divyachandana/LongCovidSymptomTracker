@@ -1,0 +1,313 @@
+/* CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1;
+    background: linear-gradient(to bottom, #76d6d2, #f2f9ff); /* Adjusted to match logo */
+    padding-bottom: 50px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff; /* Bright clean header background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow under header */
+}
+
+.logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 10px; /* Space between logo and title */
+}
+
+h1,h2 {
+    color: #005d5d; /* Darker teal to match the logo */
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* ==================================== */
+
+
+#calendar-container {
+    background-color: #ffffff; /* Maintain a clean, white background */
+    border: 1px solid #ccc; /* Light gray border for subtle definition */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern, floating effect */
+    margin: 3px;
+    font-family: 'Arial', sans-serif; /* Consistent typography with the site */
+    height: 300px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(25, 229, 219); /* Teal header to match the primary color theme */
+    color: #ffffff; /* White text for strong contrast and readability */
+}
+
+.nav {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff; /* Ensures the arrows are visible against the teal background */
+    font-size: 20px; /* Larger font size for easy interaction */
+}
+
+.month-year {
+    font-size: 16px; /* Prominent, but not overpowering */
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Seven days for a full week display */
+    text-align: center;
+}
+
+.day-name {
+    padding: 5px 0;
+    background-color: #e0f7fa; /* Light teal background for day names for a subtle contrast */
+    color: #005d5d; /* Dark teal text color for readability */
+    font-weight: bold;
+}
+
+.calendar-day {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Smooth transition for hover effects */
+    border-radius: 20px
+}
+
+.calendar-day:hover {
+    background-color: #b0e0e6; /* Lighter teal for hover, provides an interactive feel */
+    border-radius: 20px
+}
+
+.calendar-day.active {
+    background-color: #005d5d; /* Dark teal for the current day */
+    color: white; /* White text for contrast */
+    border-radius: 20px
+}
+
+.calendar-day.has-data {
+    background-color: #b0e0e6; /* Light green background to indicate data presence */
+}
+
+.calendar-day.selected {
+    background-color: #ffcc80; /* Choose your desired color for the selected date */
+    color: #ffffff; /* Text color for contrast */
+    border-radius: 20px; /* Rounded corners for a neat appearance */
+}
+
+
+
+/* ================================== */
+
+.symptom-list {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.symptom-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* Increased height */
+    margin-bottom: 10px; /* Adjusted margin */
+    background: linear-gradient(to right, #e0f7fa, #e0f7fa);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.symptom-item:hover {
+    background: linear-gradient(to right, #d9e6ff, #d9e6ff);
+}
+
+.symptom-item-name {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.symptom-image {
+    width: 250px; /* Adjust width as needed */
+    height: 250px; /* Adjust height as needed */
+    margin-right: 10px;
+}
+
+.rating-input {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Placeholder for symptom image */
+
+/* Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.rating-stars {
+    text-align: center;
+}
+
+.rating-star {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.rating-star:hover {
+    color: gold;
+}
+
+/* Update the CSS for the Modal UI changes */
+
+/* Button in Modal */
+/* Button in Modal */
+#submitRating, .button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #32a6a8; /* Teal color to match the theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#submitRating:hover, .button:hover {
+    background-color: #238b89; /* Darker shade of teal for hover state */
+}
+
+/* General button styling if you have more buttons */
+.button {
+    width: auto; /* Adjust width as needed or keep it auto for content-based width */
+    text-align: center;
+}
+
+/* Update the CSS for the Modal UI changes */
+
+/* Update the CSS for the Modal UI changes */
+
+.rating-star {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    color: #ccc; /* Default color for non-selected stars */
+}
+
+.rating-star.selected {
+    color: gold; /* Color for selected stars */
+}
+
+
+
+.summary-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f2f9ff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #005d5d;
+}
+
+
+.treatment-map-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.treatment-map-container h3 {
+    text-align: center;
+    color: #005d5d;
+}
+
+.cdc-info-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #005d5d;
+}
+
+.cdc-info-container h3 {
+    text-align: center;
+    color: #002d62
+}
+
+footer {
+    position: fixed;  /* Fix the footer to the bottom of the viewport */
+    left: 0;
+    bottom: 0;
+    width: 100%;  /* Ensure it extends across the full width of the viewport */
+    padding: 10px 20px;  /* Adjust padding as needed */
+    background-color: #f2f9ff; /* A light background that matches your site's theme */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for visual separation */
+    text-align: center; /* Center the footer content */
+    font-size: 16px;
+    color: #005d5d; /* Stylish text color */
+    border-top: 1px solid #e0f7fa; /* A subtle top border */
+    z-index: 1000;  /* Ensure the footer stays on top of other content */
+}
+
+footer a {
+    color: #007bff; /* Bright blue for links */
+    text-decoration: none; /* No underline */
+}
+
+footer a:hover,
+footer a:focus {
+    text-decoration: underline; /* Underline on hover for better visibility */
+}
+
+
